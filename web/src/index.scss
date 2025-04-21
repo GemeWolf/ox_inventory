@@ -18,7 +18,7 @@ $secondarycontainerSize: calc(#{$secondarygridRows} * #{$gridSize + 0.22vh} + #{
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -81,7 +81,7 @@ input[type='number']::-webkit-outer-spin-button {
   border: none;
   color: white;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -469,14 +469,18 @@ button:active {
   font-family: $mainFont;
 }
 
+.box-items-slot{
+  
+}
 .item-slot-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 25%);
   border-radius: 15%;
 }
+
+ /*  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 25%); */
 
 
 
