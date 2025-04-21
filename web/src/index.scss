@@ -55,7 +55,7 @@ input[type='number']::-webkit-outer-spin-button {
   width: 85%;
     height: 30%;
     margin: auto;
-
+    margin-top: 1rem;
 }
 .app-wrapper {
   height: 100%;
@@ -69,16 +69,17 @@ input[type='number']::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: black;
 }
 
 .context-menu-item {
   min-width: 80px;
   height: 40px;
 
-  background-color: $secondaryColorDark;
+  background-color: black;
   outline: none;
   border: none;
-  color: $mainColor;
+  color: white;
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
@@ -106,6 +107,7 @@ input[type='number']::-webkit-outer-spin-button {
 button:active {
   transform: translateY(3px);
 }
+
 
 .item-drag-preview {
   width: 7.7vh;
@@ -472,7 +474,7 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 35%);
+  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 25%);
   border-radius: 15%;
 }
 

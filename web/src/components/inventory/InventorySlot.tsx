@@ -120,6 +120,7 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
   const refs = useMergeRefs([connectRef, ref]);
 
   return (
+    
     <div
       ref={refs}
       onContextMenu={handleContext}
@@ -128,7 +129,7 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
       style={{
         filter:
           !canPurchaseItem(item, { type: inventoryType, groups: inventoryGroups }) || !canCraftItem(item, inventoryType)
-            ? 'brightness(80%) grayscale(100%)'
+            ? ''
             : undefined,
         opacity: isDragging ? 0.4 : 1.0,
         backgroundColor: isSlotWithItem(item) ? 'rgba(127, 127, 127,0.15)' : 'rgba(0, 0, 0, 0.64)',
