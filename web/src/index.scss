@@ -1,25 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 $mainColor: #2e2e2e;
-$textColor: #BDBDBD;
+$textColor: #bdbdbd;
 $mainFont: Inter;
 
-$secondaryColor: rgba(83, 83, 83,0.63);
-$secondaryColorHighlight: #33343F;
+$secondaryColor: rgba(83, 83, 83, 0.63);
+$secondaryColorHighlight: #33343f;
 $secondaryColorLight: rgba(255, 255, 255, 0.5);
-$secondaryColorDark: rgba(214, 214, 214, 0.8);
+$secondaryColorDark: rgba(0, 0, 0, 0.64);
 
 $gridCols: 5;
-$gridRows: 3;
-$secondarygridRows: 4;
+$gridRows: 4;
+$secondarygridRows: 6;
 $gridSize: 10.2vh;
-$gridGap: 0.4vw;
+$gridGap: 0.125rem;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
 $secondarycontainerSize: calc(#{$secondarygridRows} * #{$gridSize + 0.22vh} + #{$secondarygridRows} * #{$gridGap});
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -33,7 +32,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 ::-webkit-scrollbar {
@@ -60,18 +59,14 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .context-menu-list {
-
-
-
-
-gap: 4px;
+  gap: 4px;
   outline: none;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.context-menu-item  {
+.context-menu-item {
   min-width: 80px;
   height: 40px;
 
@@ -125,38 +120,41 @@ button:active {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
-  background: linear-gradient(45deg, rgba(24,24,24,0.66) 0%, rgb(17, 17, 17) 100%);
+  /* background: linear-gradient(45deg, rgba(24, 24, 24, 0.66) 0%, rgb(17, 17, 17) 100%); */
+  background: linear-gradient(46deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   gap: 3vw;
+  padding-top: 9rem;
 }
 
 .inventory-control {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 1vw;
 
+  align-items: flex-end;
+  gap: 1vw;
 
   .inventory-control-wrapper {
     display: flex;
     flex-direction: row;
-    gap:1vw;
+    gap: 0.5rem;
     justify-content: center;
     align-items: center;
   }
 
   .inventory-control-input {
     transition: 200ms;
-    width: 5vw;
-    height: 2vw;
+    width: 3.7vw;
+    height: 1.9vw;
+    border-radius: 10%;
     font-family: $mainFont;
     font-size: 1vw;
     text-align: center;
     outline: none;
     border: none;
     color: #fff;
-    background-color: $secondaryColor;
+    background: linear-gradient(183deg, rgb(8, 8, 8) 0%, rgb(0 0 0 / 56%) 50%);
     &:focus-within {
       background-color: $secondaryColorDark;
     }
@@ -164,27 +162,34 @@ button:active {
 
   .inventory-control-button {
     color: #fff;
-    background-color: $secondaryColor;
+    background: linear-gradient(183deg, rgb(8, 8, 8) 0%, rgb(0 0 0 / 56%) 50%);
     transition: 200ms;
-    border-radius: 2.5%;
+    border-radius: 10%;
     border: none;
     text-transform: uppercase;
     font-family: $mainFont;
-    width: 5vw;
+    width: 3.8vw;
     height: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
-    img{
-
+    img {
     }
     &:hover {
       background-color: $secondaryColorDark;
     }
   }
 }
-
+.icon-hand-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.icon-info-button {
+  width: 1.1rem;
+  height: 1.1rem;
+}
 .useful-controls-dialog {
   background-color: $mainColor;
   position: absolute;
@@ -210,6 +215,13 @@ button:active {
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
+}
+
+.div-container {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .useful-controls-dialog-close {
@@ -270,49 +282,51 @@ button:active {
 
 // Dialog is used fro useful controls window
 
-.verticalline{
+.verticalline {
   position: relative;
   top: 2vw;
-  left: .6vw;
-  height: calc(#{4.8}  * #{$gridSize + 0.22vh} + #{4.8} * #{$gridGap});
+  right: 0.6vw;
+  height: calc(#{4.8} * #{$gridSize + 0.22vh} + #{4.8} * #{$gridGap});
   width: 2px;
-  background: linear-gradient(180deg, rgba(233, 233, 233, 0.4) 0%,  rgba(233, 233, 233, 0) 100%);
+  background: linear-gradient(180deg, rgba(233, 233, 233, 0.4) 0%, rgba(233, 233, 233, 0) 100%);
 }
 
-.line{
+.line {
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(233, 233, 233, .4) 0%,  rgba(233, 233, 233, 0) 100%);
+  background: linear-gradient(90deg, rgba(233, 233, 233, 0.4) 0%, rgba(233, 233, 233, 0) 100%);
 }
 
-.playerinventory{
+.playerinventory {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(#{5.5}  * #{$gridSize + 0.22vh} + #{5.5} * #{$gridGap});
+  height: calc(#{5.5} * #{$gridSize + 0.22vh} + #{5.5} * #{$gridGap});
+  /*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
 }
 
-.secondaryinventory{
+.secondaryinventory {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(#{5.5}  * #{$gridSize + 0.22vh} + #{5.5} * #{$gridGap});
+  height: calc(#{5.5} * #{$gridSize + 0.22vh} + #{5.5} * #{$gridGap});
 }
 
 // inventory grids
 .inventory-grid-wrapper {
   display: flex;
   flex-direction: column;
-  gap: calc($gridGap * 2);
+  /*   gap: calc($gridGap * 2); */
+  gap: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.hotinventory-grid-wrapper{
+.hotinventory-grid-wrapper {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: end;
-  gap: 1vw;
-
+  gap: 0.9rem;
 }
 
 .inventory-grid-header-wrapper {
@@ -320,17 +334,14 @@ button:active {
   flex-direction: row;
   align-items: end;
   justify-content: space-between;
-  margin: 0 1vw;
+  /* margin: 0 1vw;  spacing margins*/
 
-  p{
+  p {
     color: $textColor;
-
   }
-  img{
-    width: 1.5vw;
-
+  img {
+    width: 2.5rem;
   }
-
 }
 
 .inventory-grid-container {
@@ -342,45 +353,57 @@ button:active {
   overflow-y: scroll;
 }
 
-
-
-.secinventory-grid-container{
+.secinventory-grid-container {
   @extend .inventory-grid-container;
   height: $secondarycontainerSize;
+  /*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
 }
 
-
-.hotinventory-grid-container{
+.hotinventory-grid-container {
   @extend .inventory-grid-container;
   height: fit-content;
   padding-top: 0.5vw;
 }
 
-.label-container{
+.label-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   gap: 0.4vw;
-  p{
+  p {
     font-size: 1.5vw;
     font-weight: bold;
-    text-transform: uppercase;
-    color: $textColor;
+    /*     text-transform: uppercase; */
+    color: white;
   }
 }
 
-.weight-container{
+.icon-wallet {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+.label-pocket {
+  font-size: 1.3rem !important;
+}
+
+.weight-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.4vw;
 
-  img{
-    width: .9vw;
+  img {
+    width: 1.5rem;
   }
-  p{
-    font-size: 0.7vw;
+  p {
+    font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     color: $textColor;
@@ -389,10 +412,11 @@ button:active {
 
 // inventory slots
 .inventory-slot {
-  background-color: $secondaryColor;
+  /*   background-color: $secondaryColor; */
+  background-color: rgb(0 0 0 / 54%);
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 2.5%;
+  border-radius: 15%;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
   background-size: 5vh;
@@ -408,33 +432,33 @@ button:active {
 }
 
 .inventory-slot-label-text {
-  text-transform: uppercase;
+  text-transform: capitalize;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0.2vw;
-
+  padding: 0.4vw;
+  color: white;
   font-family: $mainFont;
-  font-size: 0.7vw;
-  font-weight: bold
+  font-size: 0.5vw;
+  font-weight: 500;
 }
 
 .inventory-slot-number {
   position: absolute;
-  left: 0.3vw;
+  left: 0.5vw;
   top: -0.5vw;
-  border-radius: 100%;
+  border-radius: 10%;
   background-color: white;
   color: black;
 
-  width: 1vw;
-  height: 1vw;
+  width: 1.3vw;
+  height: 1.3vw;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .7vw;
-  font-weight: bold;
+  font-size: 0.7vw;
+  font-weight: bolder;
   font-family: $mainFont;
 }
 
@@ -443,21 +467,22 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
+  background: linear-gradient(183deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 50%);
+  border-radius: 15%;
 }
 
 .item-slot-header-wrapper {
-  p{
-    position: relative;
+  p {
     top: 0.3vw;
-    font-size: 0.7vw;
-    font-weight: bold
-  };
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5rem;
+  }
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
 
 .item-slot-currency-wrapper {
   display: flex;
@@ -481,7 +506,6 @@ button:active {
     text-shadow: 0.1vh 0.1vh 0 rgba(0, 0, 0, 0.7);
   }
 }
-
 
 .tooltip-wrapper {
   pointer-events: none;
@@ -603,11 +627,15 @@ button:active {
 }
 
 .durability-bar {
-  background: rgba(255, 255, 255, 0.3);
-  height: 0.2vw;
+  background: rgba(26, 26, 26, 0.3);
+  height: 0.2rem;
   overflow: hidden;
+  transform: rotate(270deg);
+  margin-left: -1.8rem;
+  margin-top: -3rem;
+  position: absolute;
+  width: 4rem;
 }
-
 
 .transition-fade-enter {
   opacity: 0;
@@ -628,7 +656,7 @@ button:active {
 }
 
 .transition-slide-up-enter {
-  transform: translateY(200px)
+  transform: translateY(200px);
 }
 
 .transition-slide-up-enter-active {

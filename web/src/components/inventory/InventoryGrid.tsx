@@ -5,8 +5,8 @@ import InventorySlot from './InventorySlot';
 import { getTotalWeight } from '../../helpers';
 import { useAppSelector } from '../../store';
 import { useIntersection } from '../../hooks/useIntersection';
-import bag from '../../assets/bag.png'
-import weights from '../../assets/weight.png'
+import bag from '../../assets/ux-icons/only-x3.png';
+import weights from '../../assets/ux-icons/pound.png';
 const PAGE_SIZE = 30;
 
 const InventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {
@@ -29,24 +29,26 @@ const InventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {
       <div className="inventory-grid-wrapper" style={{ pointerEvents: isBusy ? 'none' : 'auto' }}>
         <div>
           <div className="inventory-grid-header-wrapper">
-            <div className='label-container'>
+            <div className="label-container">
               <img src={bag} alt="" />
-            <p>{inventory.label}</p>
+              <p>{inventory.label}</p>
             </div>
             {inventory.maxWeight && (
-              <div className='weight-container'>
+              <div className="weight-container">
                 <img src={weights} alt="" />
-              <p>
-                {weight / 1000}/{inventory.maxWeight / 1000}kg
-              </p>
+                <p>
+                  {weight / 1000}/{inventory.maxWeight / 1000} kg
+                </p>
               </div>
             )}
           </div>
-
         </div>
-        <div className={inventory.type == 'player' ? "inventory-grid-container" : "secinventory-grid-container"} ref={containerRef}>
+        <div
+          className={inventory.type == 'player' ? 'inventory-grid-container' : 'secinventory-grid-container'}
+          ref={containerRef}
+        >
           <>
-            {inventory.items.slice(inventory.type == 'player' ? 5 :0, (page + 1) * PAGE_SIZE).map((item, index) => (
+            {inventory.items.slice(inventory.type == 'player' ? 5 : 0, (page + 1) * PAGE_SIZE).map((item, index) => (
               <InventorySlot
                 key={`${inventory.type}-${inventory.id}-${item.slot}`}
                 item={item}
