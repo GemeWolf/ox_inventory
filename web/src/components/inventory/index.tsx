@@ -56,7 +56,7 @@ const Inventory: React.FC = () => {
 
           <div className='secondaryinventory'>
           <RightInventory />
-          <InventoryControl />
+{/*           <InventoryControl /> */}
           </div>
           <Tooltip />
           <InventoryContext />
