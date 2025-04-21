@@ -6,11 +6,11 @@ $mainFont: Inter;
 $secondaryColor: rgba(83, 83, 83, 0.63);
 $secondaryColorHighlight: #33343f;
 $secondaryColorLight: rgba(255, 255, 255, 0.5);
-$secondaryColorDark: rgba(0, 0, 0, 0.54);
+$secondaryColorDark: rgba(0, 0, 0, 0.64);
 
 $gridCols: 5;
-$gridRows: 3;
-$secondarygridRows: 5;
+$gridRows: 4;
+$secondarygridRows: 6;
 $gridSize: 10.2vh;
 $gridGap: 0.125rem;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
@@ -120,11 +120,12 @@ button:active {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
-  /*   background: linear-gradient(45deg, rgba(24,24,24,0.66) 0%, rgb(17, 17, 17) 100%); */
-  background: linear-gradient(46deg, rgb(0 0 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  /* background: linear-gradient(45deg, rgba(24, 24, 24, 0.66) 0%, rgb(17, 17, 17) 100%); */
+  background: linear-gradient(46deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   gap: 3vw;
+  padding-top: 9rem;
 }
 
 .inventory-control {
@@ -153,7 +154,7 @@ button:active {
     outline: none;
     border: none;
     color: #fff;
-    background-color: $secondaryColor;
+    background: linear-gradient(183deg, rgb(8, 8, 8) 0%, rgb(0 0 0 / 56%) 50%);
     &:focus-within {
       background-color: $secondaryColorDark;
     }
@@ -161,7 +162,7 @@ button:active {
 
   .inventory-control-button {
     color: #fff;
-    background-color: $secondaryColor;
+    background: linear-gradient(183deg, rgb(8, 8, 8) 0%, rgb(0 0 0 / 56%) 50%);
     transition: 200ms;
     border-radius: 10%;
     border: none;
@@ -284,7 +285,7 @@ button:active {
 .verticalline {
   position: relative;
   top: 2vw;
-  left: 0.6vw;
+  right: 0.6vw;
   height: calc(#{4.8} * #{$gridSize + 0.22vh} + #{4.8} * #{$gridGap});
   width: 2px;
   background: linear-gradient(180deg, rgba(233, 233, 233, 0.4) 0%, rgba(233, 233, 233, 0) 100%);
@@ -301,7 +302,7 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   height: calc(#{5.5} * #{$gridSize + 0.22vh} + #{5.5} * #{$gridGap});
-/*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  /*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
 }
 
 .secondaryinventory {
@@ -317,6 +318,7 @@ button:active {
   flex-direction: column;
   /*   gap: calc($gridGap * 2); */
   gap: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .hotinventory-grid-wrapper {
@@ -354,7 +356,7 @@ button:active {
 .secinventory-grid-container {
   @extend .inventory-grid-container;
   height: $secondarycontainerSize;
-/*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  /*   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
 }
 
 .hotinventory-grid-container {
@@ -373,7 +375,7 @@ button:active {
     font-size: 1.5vw;
     font-weight: bold;
     /*     text-transform: uppercase; */
-    color: $textColor;
+    color: white;
   }
 }
 
@@ -435,7 +437,7 @@ button:active {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0.4vw;
-
+  color: white;
   font-family: $mainFont;
   font-size: 0.5vw;
   font-weight: 500;
@@ -443,7 +445,7 @@ button:active {
 
 .inventory-slot-number {
   position: absolute;
-  left: 0.3vw;
+  left: 0.5vw;
   top: -0.5vw;
   border-radius: 10%;
   background-color: white;
@@ -626,9 +628,13 @@ button:active {
 
 .durability-bar {
   background: rgba(26, 26, 26, 0.3);
-  height: 0.2vw;
+  height: 0.2rem;
   overflow: hidden;
-/*   transform: rotate(270deg); */
+  transform: rotate(270deg);
+  margin-left: -1.8rem;
+  margin-top: -3rem;
+  position: absolute;
+  width: 4rem;
 }
 
 .transition-fade-enter {
