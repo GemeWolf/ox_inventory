@@ -14,7 +14,7 @@ import InventoryContext from './InventoryContext';
 import { closeContextMenu } from '../../store/contextMenu';
 import Fade from '../utils/transitions/Fade';
 import HotInventory from './HotInventory';
-import respect from '../../assets/xrespect2.png';
+import respect from '../../../public/xrespect2.png';
 const Inventory: React.FC = () => {
   const [inventoryVisible, setInventoryVisible] = useState(false);
   const dispatch = useAppDispatch();

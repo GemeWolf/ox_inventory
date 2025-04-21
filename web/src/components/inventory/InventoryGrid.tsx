@@ -5,7 +5,7 @@ import InventorySlot from './InventorySlot';
 import { getTotalWeight } from '../../helpers';
 import { useAppSelector } from '../../store';
 import { useIntersection } from '../../hooks/useIntersection';
-import bag from '../../assets/only-x3.png';
+import bag from '../../../public/only-x3.png';
 import weights from '../../assets/pound.png';
 const PAGE_SIZE = 30;
 
