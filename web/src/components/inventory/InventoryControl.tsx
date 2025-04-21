@@ -8,9 +8,9 @@ import { onGive } from '../../dnd/onGive';
 import { fetchNui } from '../../utils/fetchNui';
 import { Locale } from '../../store/locale';
 import UsefulControls from './UsefulControls';
-import useimg from '../../assets/ux-icons/hand.png';
+import useimg from '../../assets/hand.png';
 import giveimg from '../../assets/handshake.png';
-import info from "../../assets/ux-icons/info.png";
+import info from "../../assets/info.png";
 import closeimg from '../../assets/close.png';
 
 const InventoryControl: React.FC = () => {

@@ -5,8 +5,8 @@ import InventorySlot from './InventorySlot';
 import { getTotalWeight } from '../../helpers';
 import { useAppSelector } from '../../store';
 import { useIntersection } from '../../hooks/useIntersection';
-import bag from '../../assets/ux-icons/only-x3.png';
-import weights from '../../assets/ux-icons/pound.png';
+import bag from '../../assets/only-x3.png';
+import weights from '../../assets/pound.png';
 const PAGE_SIZE = 30;
 
 const InventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {

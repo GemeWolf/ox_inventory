@@ -1,7 +1,7 @@
 import React from 'react';
 import { Inventory } from '../../typings';
 import InventorySlot from './InventorySlot';
-import bag from '../../assets/ux-icons/wallet.png';
+import bag from '../../assets/wallet.png';
 import InventoryControl from './InventoryControl';
 
 const HotInventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {

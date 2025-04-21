@@ -10,7 +10,7 @@ $secondaryColorDark: rgba(0, 0, 0, 0.64);
 
 $gridCols: 5;
 $gridRows: 4;
-$secondarygridRows: 6;
+$secondarygridRows: 4;
 $gridSize: 10.2vh;
 $gridGap: 0.125rem;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
@@ -51,7 +51,12 @@ input[type='number']::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
 }
+.respect-logo{
+  width: 85%;
+    height: 30%;
+    margin: auto;
 
+}
 .app-wrapper {
   height: 100%;
   width: 100%;
@@ -125,7 +130,7 @@ button:active {
   /* background: linear-gradient(45deg, rgba(24, 24, 24, 0.66) 0%, rgb(17, 17, 17) 100%); */
   background: linear-gradient(46deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   gap: 3vw;
-  padding-top: 9rem;
+  padding-top: 12em;
 }
 
 .inventory-control {
@@ -467,9 +472,11 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: linear-gradient(183deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 50%);
+  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 35%);
   border-radius: 15%;
 }
+
+
 
 .item-slot-header-wrapper {
   p {
