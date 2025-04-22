@@ -14,7 +14,7 @@ import InventoryContext from './InventoryContext';
 import { closeContextMenu } from '../../store/contextMenu';
 import Fade from '../utils/transitions/Fade';
 import HotInventory from './HotInventory';
-
+import respect from '../../../public/xrespect2.png';
 const Inventory: React.FC = () => {
   const [inventoryVisible, setInventoryVisible] = useState(false);
   const dispatch = useAppDispatch();
@@ -45,20 +45,18 @@ const Inventory: React.FC = () => {
     <>
       <Fade in={inventoryVisible}>
         <div className="inventory-wrapper">
+          <div className="verticalline"></div>
 
-        <div className='verticalline'></div>
-
-          <div className='playerinventory'>
-          <LeftInventory />
-          <HotInventory />
-
+          <div className="playerinventory">
+            <LeftInventory />
+            <HotInventory />
           </div>
 
-          <div className='secondaryinventory'>
-          <RightInventory />
-{/*           <InventoryControl /> */}
+          <div className="secondaryinventory">
+            <RightInventory />
+            <img src={respect} alt='' className='respect-logo'/>
           </div>
-          <div className='verticalline'></div>
+          <div className="verticalline"></div>
           <Tooltip />
           <InventoryContext />
         </div>

@@ -5,15 +5,16 @@ import InventorySlot from './InventorySlot';
 import { getTotalWeight } from '../../helpers';
 import { useAppSelector } from '../../store';
 import { useIntersection } from '../../hooks/useIntersection';
-import bag from '../../assets/ux-icons/only-x3.png';
-import weights from '../../assets/ux-icons/pound.png';
+import bag from '../../../public/only-x3.png';
+import weights from '../../assets/pound.png';
 const PAGE_SIZE = 30;
 
 const InventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {
   const weight = useMemo(
-    () => (inventory.maxWeight !== undefined ? Math.floor(getTotalWeight(inventory.items) * 1000) / 1000 : 0),
+    () => (inventory.maxWeight !== undefined ? Math.round(getTotalWeight(inventory.items) * 1000) / 1000 : 0),
     [inventory.maxWeight, inventory.items]
   );
+
   const [page, setPage] = useState(0);
   const containerRef = useRef(null);
   const { ref, entry } = useIntersection({ threshold: 0.5 });
@@ -37,7 +38,9 @@ const InventoryGrid: React.FC<{ inventory: Inventory }> = ({ inventory }) => {
               <div className="weight-container">
                 <img src={weights} alt="" />
                 <p>
-                  {weight / 1000}/{inventory.maxWeight / 1000} kg
+                  <p>
+                    {(weight / 1000).toFixed(2)} / {(inventory.maxWeight / 1000).toFixed(2)} kg
+                  </p>
                 </p>
               </div>
             )}

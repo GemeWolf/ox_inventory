@@ -10,7 +10,7 @@ $secondaryColorDark: rgba(0, 0, 0, 0.64);
 
 $gridCols: 5;
 $gridRows: 4;
-$secondarygridRows: 6;
+$secondarygridRows: 4;
 $gridSize: 10.2vh;
 $gridGap: 0.125rem;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
@@ -18,7 +18,7 @@ $secondarycontainerSize: calc(#{$secondarygridRows} * #{$gridSize + 0.22vh} + #{
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -51,7 +51,12 @@ input[type='number']::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
 }
-
+.respect-logo {
+  width: 85%;
+  height: 30%;
+  margin: auto;
+  margin-top: 1rem;
+}
 .app-wrapper {
   height: 100%;
   width: 100%;
@@ -64,18 +69,19 @@ input[type='number']::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: black;
 }
 
 .context-menu-item {
   min-width: 80px;
   height: 40px;
 
-  background-color: $secondaryColorDark;
+  background-color: black;
   outline: none;
   border: none;
-  color: $mainColor;
+  color: white;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -125,7 +131,7 @@ button:active {
   /* background: linear-gradient(45deg, rgba(24, 24, 24, 0.66) 0%, rgb(17, 17, 17) 100%); */
   background: linear-gradient(46deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   gap: 3vw;
-  padding-top: 9rem;
+  padding-top: 12em;
 }
 
 .inventory-control {
@@ -462,14 +468,23 @@ button:active {
   font-family: $mainFont;
 }
 
+.inventory-slot.has-item {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(128, 128, 128, 0.3)), var(--item-image-url);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
 .item-slot-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: linear-gradient(183deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 50%);
   border-radius: 15%;
 }
+
+/*  background: linear-gradient(2deg, rgb(8 8 8) 0%, rgba(0, 0, 0, 0.377) 25%); */
 
 .item-slot-header-wrapper {
   p {
@@ -628,13 +643,13 @@ button:active {
 
 .durability-bar {
   background: rgba(26, 26, 26, 0.3);
-  height: 0.2rem;
+  height: 0.1rem;
   overflow: hidden;
   transform: rotate(270deg);
-  margin-left: -1.8rem;
-  margin-top: -3rem;
+  margin-left: -1.5em;
+  margin-top: -2.4rem;
   position: absolute;
-  width: 4rem;
+  width: 3.2rem;
 }
 
 .transition-fade-enter {
