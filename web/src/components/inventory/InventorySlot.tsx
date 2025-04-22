@@ -132,9 +132,9 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
             ? ''
             : undefined,
         opacity: isDragging ? 0.4 : 1.0,
-        backgroundColor: isSlotWithItem(item) ? 'linear-gradient(rgb(231 231 231 / 34%), rgb(0 0 0 / 48%))' : 'rgba(0, 0, 0, 0.64)',
+        backgroundColor: isSlotWithItem(item) ? 'linear-gradient(rgb(111 111 111 / 34%), rgba(0, 0, 0, 0.48))' : 'rgba(0, 0, 0, 0.64)',
         backgroundImage: isSlotWithItem(item)
-          ? `linear-gradient(rgb(231 231 231 / 34%), rgb(0 0 0 / 48%)), url(${item?.name ? getItemUrl(item as SlotWithItem) : 'none'})`
+          ? `linear-gradient(rgb(111 111 111 / 34%), rgba(0, 0, 0, 0.48)), url(${item?.name ? getItemUrl(item as SlotWithItem) : 'none'})`
           : `url(${item?.name ? getItemUrl(item as SlotWithItem) : 'none'})`,  // Solo imagen cuando no hay ítem
           backgroundSize: isSlotWithItem(item) ? 'cover, 50%' : 'contain', 
         backgroundPosition: 'center, center',  // Ambas capas centradas
