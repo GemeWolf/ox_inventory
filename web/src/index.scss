@@ -472,6 +472,16 @@ button:active {
 .box-items-slot{
   
 }
+.inventory-slot.has-item {
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(128, 128, 128, 0.3)),
+    var(--item-image-url);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
 .item-slot-wrapper {
   display: flex;
   flex-direction: column;
